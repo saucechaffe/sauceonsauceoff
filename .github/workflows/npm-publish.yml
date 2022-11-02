@@ -20,11 +20,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-        - name: Checkout
-          uses: actions/checkout@v2
-        - uses: actions/setup-node@v1
+        - name: Install Chromium
+          run: sudo apt-get install chromium-browser
+        - uses: actions/checkout@v2
+        - name: Use Node.js
+          uses: actions/setup-node@v1
           with:
-            node-version: 16.3.0
+            node-version: 16.x
         - name: Install
           run: npm install
         - name: Test
