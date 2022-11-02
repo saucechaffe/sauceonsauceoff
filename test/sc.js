@@ -1,5 +1,4 @@
 var ip = require("ip");
-const { Driver } = require("selenium-webdriver/chrome");
 const { config } = require("../wdio.conf");
 var a = ip.address();
 console.log("private ip address", a);
