@@ -7,30 +7,20 @@ env:
   SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
   SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
 
-
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
+on: [push, pull_request]
 jobs:
-  test:
-
+  build:
     runs-on: ubuntu-latest
-
     steps:
-        - name: Install Chromium
-          run: sudo apt-get install chromium-browser
-        - uses: actions/checkout@v2
-        - name: Use Node.js
-          uses: actions/setup-node@v1
+        - name: Checkout
+          uses: actions/checkout@v2
+        - uses: actions/setup-node@v1
           with:
-            node-version: 16.x
+            node-version: 18
         - name: Install
           run: npm install
         - name: Test
-          run: npx wdio wdio.git.js
+          run: npx wdio.git.js
         - uses: actions/upload-artifact@v1
           if: failure()
           with:
