@@ -58,8 +58,8 @@ exports.config = {
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
-        
-        //
+        platformName: 'macOS 12',
+        browserVersion: 'latest',
         browserName: 'chrome',
         'sauce:options': {
             build: new Date().toDateString(),
@@ -71,16 +71,16 @@ exports.config = {
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
         // excludeDriverLogs: ['bugreport', 'server'],
     },
-    {
-        platformName: 'iOS',
-        browserName: 'Safari',
-        'appium:platformVersion': '14',
-        'appium:deviceName': 'iPhone.*',
-        'sauce:options': {
-            build: new Date().toDateString(),
-            name: "iPhone RDC",
-        }
-    },
+    // {
+    //     platformName: 'iOS',
+    //     browserName: 'Safari',
+    //     'appium:platformVersion': '14',
+    //     'appium:deviceName': 'iPhone.*',
+    //     'sauce:options': {
+    //         build: new Date().toDateString(),
+    //         name: "iPhone RDC",
+    //     }
+    // },
     {
         platformName: 'iOS',
         browserName: 'Safari',
