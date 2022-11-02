@@ -3,6 +3,10 @@
 
 name: Node.js CI
 
+env: 
+  SAUCE_USERNAME:oauth-shane.chaffe-63a10
+  SAUCE_ACCESS_KEY:5835af7e-2c32-42f3-921b-6fd5ba85326c
+
 on:
   push:
     branches: [ "main" ]
