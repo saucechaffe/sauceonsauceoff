@@ -12,6 +12,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+        - name: Install Chromium
+          run: sudo apt-get install chromium-browser
         - name: Checkout
           uses: actions/checkout@v2
         - uses: actions/setup-node@v1
@@ -21,8 +23,3 @@ jobs:
           run: npm install
         - name: Test
           run: npx wdio wdio.git.js
-        - uses: actions/upload-artifact@v1
-          if: failure()
-          with:
-            name: logs
-            path: logs
