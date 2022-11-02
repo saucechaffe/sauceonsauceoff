@@ -33,4 +33,4 @@ jobs:
     - run: npm ci
     - run: npm install
     - run: npm run build --if-present
-    - run: npx wdio wdio.conf.js
+    - run: npx wdio wdio.conf.js  
