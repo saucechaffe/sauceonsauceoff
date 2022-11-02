@@ -12,11 +12,11 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  schedule:
+      - cron: '* 1 * * *'
 
 jobs:
   build:
-    schedule:
-      - cron: '* 1 * * *'
 
     runs-on: ubuntu-latest
 
