@@ -141,7 +141,7 @@ exports.config = {
     // commands. Instead, they hook themselves up into the test process.
     services: [
         ['sauce', {
-            sauceConnect: false,
+            sauceConnect: true,
         }]
     ],
     
