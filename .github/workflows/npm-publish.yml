@@ -1,25 +1,27 @@
-# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
-# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
+name: Node CI
 
-name: webdriverio-ci
+on: [push]
 
-env: 
-  SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
-  SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
-
-on: [push, pull_request]
 jobs:
   build:
+
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [8.x, 10.x, 12.x]
+
     steps:
-        - name: Install Chromium
-          run: sudo apt-get install chromium-browser
-        - name: Checkout
-          uses: actions/checkout@v2
-        - uses: actions/setup-node@v1
-          with:
-            node-version: 18
-        - name: Install
-          run: npm install
-        - name: Test
-          run: npx wdio wdio.git.js
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: npm install, build, and test
+        env:
+          SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+          SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+        run: |
+          npm ci
+          npm run build --if-present
+          ./node_modules/.bin/wdio wdio.conf.js
