@@ -6,8 +6,8 @@ console.log("private ip address", a);
 describe('Confirms whether you are using Sauce Connect or not', () => {
     it('should open a webpage', async() => {
         await browser.url('https://www.whatismyip.com/');
-        await browser.pause(40000);
         await expect(browser).toHaveTitle('What Is My IP? Shows Your Public IP Address - IPv4 - IPv6');
+        await browser.pause(30000);
     });
     it('copies IP to console', async() => {
         // const disagree = await $('//*[@id="qc-cmp2-ui"]/div[2]/div/button[2]');
