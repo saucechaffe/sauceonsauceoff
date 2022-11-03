@@ -16,7 +16,6 @@ describe('Confirms whether you are using Sauce Connect or not', () => {
         const myIP = await $('//*[@id="ipv4"]/a');
         console.log(await myIP.getText());
         // in real test, uncomment this for mobile so it can load the full recording in sauce ui
-        await browser.pause(20000);
     });
     it('confirms whether sauce connect is used', async() => {
         if(config.services.some(e => e[1].sauceConnect === true)) {
