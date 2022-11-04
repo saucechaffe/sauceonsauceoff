@@ -12,3 +12,5 @@ The tool will log what IP is being used for the test so you can determine whethe
 [Sauce Connect Proxy CLI](https://docs.saucelabs.com/dev/cli/sauce-connect-proxy/#--direct-domains)
 
 Also note, the amount of tests you run does depend on your concurrency available in your account. This may cause errors and timeouts.
+
+[![Test with wdio](https://github.com/saucechaffe/sauceonsauceoff/actions/workflows/wdioci.js.yml/badge.svg)](https://github.com/saucechaffe/sauceonsauceoff/actions/workflows/wdioci.js.yml)
