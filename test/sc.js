@@ -23,11 +23,9 @@ describe('Confirms whether you are using Sauce Connect or not', () => {
             console.log("You are using Sauce Connect");
             // path to your config where sauce is stored
             expect(config.services.some(e => e[1].sauceConnect)).toBeTruthy();
-            await driver.end();
         } else {
             console.log("You are not using Sauce Connect");
             // expect(config.services.some(e => e[1].sauceConnect)).toBeTruthy();
-            await driver.end();
         }
     }); 
 });
