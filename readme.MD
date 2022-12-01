@@ -10,6 +10,7 @@ This test's sole purpose is to confirm whether you are using Sauce Connect or no
 
 The tool will log what IP is being used for the test so you can determine whether it is yours or the tunnels. There are multiple Sauce flags that can be used to ensure the proxy does not route back to your address if you kick the tunnel off on your local machine.
 [Sauce Connect Proxy CLI](https://docs.saucelabs.com/dev/cli/sauce-connect-proxy/#--direct-domains)
+To start test.
 
 Also note, the amount of tests you run does depend on your concurrency available in your account. This may cause errors and timeouts.
 
