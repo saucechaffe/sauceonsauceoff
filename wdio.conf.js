@@ -61,7 +61,7 @@ exports.config = {
         browserName: 'chrome',
         'sauce:options': {
             build: new Date().toDateString(),
-            name: "Browser default",
+            name: "MacOS build",
         },
         acceptInsecureCerts: true
         // If outputDir is provided WebdriverIO can capture driver session logs
@@ -83,11 +83,22 @@ exports.config = {
     {
         platformName: 'iOS',
         browserName: 'Safari',
-        'appium:deviceName': 'iPhone Simulator',
-        'appium:platformVersion': '15.0',
         'sauce:options': {
             build: new Date().toDateString(),
             name: "iPhone sim",
+            'sauce:options': {
+            build: new Date().toDateString(),
+            name: "iPhone Simulator",
+            }
+        }
+    },
+    {
+        browserName: 'chrome',
+        browserVersion: 'latest',
+        platformName: 'Windows 10',
+        'sauce:options': {
+            build: new Date().toDateString(),
+            name: "Windows build",
         }
     }
 ],
